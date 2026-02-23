@@ -89,8 +89,11 @@ const LEGAL_INFO = [
   { label: 'Affiliation CNSS', value: '1020391100', icon: Building2 }
 ];
 
+<<<<<<< HEAD
 const CONTACT_EMAIL = 'contact@nes-sarlu.cd';
 
+=======
+>>>>>>> 7f08ec824c762790bfec99aaa9f6143dc8c71a47
 const PROJECTS = [
   { id: 1, title: 'Maintenance Minière', category: 'machinery', image: 'https://picsum.photos/seed/mine1/600/450', description: 'Révision complète d\'une flotte d\'engins de terrassement.' },
   { id: 2, title: 'Installation Solaire', category: 'electrical', image: 'https://picsum.photos/seed/solar1/600/450', description: 'Centrale photovoltaïque pour un site industriel à Lubumbashi.' },
@@ -106,7 +109,10 @@ export default function App() {
   const [activeTab, setActiveTab] = useState('parts');
   const [filter, setFilter] = useState('all');
   const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[0] | null>(null);
+<<<<<<< HEAD
   const [contactForm, setContactForm] = useState({ name: '', email: '', subject: 'Demande de cotation', message: '' });
+=======
+>>>>>>> 7f08ec824c762790bfec99aaa9f6143dc8c71a47
 
   useEffect(() => {
     console.log("CONNECTED");
@@ -119,6 +125,7 @@ export default function App() {
     ? PROJECTS 
     : PROJECTS.filter(p => p.category === filter);
 
+<<<<<<< HEAD
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const subject = encodeURIComponent(`[NES] ${contactForm.subject} - ${contactForm.name}`);
@@ -128,6 +135,8 @@ export default function App() {
     window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
   };
 
+=======
+>>>>>>> 7f08ec824c762790bfec99aaa9f6143dc8c71a47
   return (
     <div className="min-h-screen bg-[#F8F9FA] font-sans text-slate-900">
       {/* Navigation */}
@@ -152,7 +161,10 @@ export default function App() {
                 { name: 'Accueil', href: '#home' },
                 { name: 'À Propos', href: '#about' },
                 { name: 'Services', href: '#services' },
+<<<<<<< HEAD
                 { name: 'Catalogue', href: '#catalogue' },
+=======
+>>>>>>> 7f08ec824c762790bfec99aaa9f6143dc8c71a47
                 { name: 'Réalisations', href: '#realisations' },
                 { name: 'Légal', href: '#legal' }
               ].map((link) => (
@@ -192,7 +204,10 @@ export default function App() {
                   { name: 'Accueil', href: '#home' },
                   { name: 'À Propos', href: '#about' },
                   { name: 'Services', href: '#services' },
+<<<<<<< HEAD
                   { name: 'Catalogue', href: '#catalogue' },
+=======
+>>>>>>> 7f08ec824c762790bfec99aaa9f6143dc8c71a47
                   { name: 'Réalisations', href: '#realisations' },
                   { name: 'Légal', href: '#legal' }
                 ].map((link) => (
@@ -393,6 +408,7 @@ export default function App() {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Catalogue Section */}
       <section id="catalogue" className="py-32 bg-white relative overflow-hidden">
         <div className="absolute top-1/2 right-0 -translate-y-1/2 w-96 h-96 bg-red-700/5 rounded-full blur-[120px] -z-10"></div>
@@ -416,6 +432,8 @@ export default function App() {
         </div>
       </section>
 
+=======
+>>>>>>> 7f08ec824c762790bfec99aaa9f6143dc8c71a47
       {/* Realisations Section */}
       <section id="realisations" className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -656,6 +674,7 @@ export default function App() {
               </div>
               
               <div className="p-12 lg:p-24 bg-white">
+<<<<<<< HEAD
                 <form className="space-y-8" onSubmit={handleContactSubmit}>
                   <div className="grid sm:grid-cols-2 gap-8">
                     <div className="space-y-3">
@@ -665,11 +684,26 @@ export default function App() {
                     <div className="space-y-3">
                       <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Email Professionnel</label>
                       <input type="email" required value={contactForm.email} onChange={e => setContactForm(f => ({ ...f, email: e.target.value }))} className="w-full px-6 py-4 rounded-2xl border border-slate-100 bg-slate-50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-red-700/5 focus:border-red-700 transition-all" placeholder="jean@entreprise.com" />
+=======
+                <form className="space-y-8">
+                  <div className="grid sm:grid-cols-2 gap-8">
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Nom Complet</label>
+                      <input type="text" className="w-full px-6 py-4 rounded-2xl border border-slate-100 bg-slate-50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-red-700/5 focus:border-red-700 transition-all" placeholder="Jean Dupont" />
+                    </div>
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Email Professionnel</label>
+                      <input type="email" className="w-full px-6 py-4 rounded-2xl border border-slate-100 bg-slate-50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-red-700/5 focus:border-red-700 transition-all" placeholder="jean@entreprise.com" />
+>>>>>>> 7f08ec824c762790bfec99aaa9f6143dc8c71a47
                     </div>
                   </div>
                   <div className="space-y-3">
                     <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Objet de la demande</label>
+<<<<<<< HEAD
                     <select value={contactForm.subject} onChange={e => setContactForm(f => ({ ...f, subject: e.target.value }))} className="w-full px-6 py-4 rounded-2xl border border-slate-100 bg-slate-50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-red-700/5 focus:border-red-700 transition-all appearance-none cursor-pointer">
+=======
+                    <select className="w-full px-6 py-4 rounded-2xl border border-slate-100 bg-slate-50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-red-700/5 focus:border-red-700 transition-all appearance-none cursor-pointer">
+>>>>>>> 7f08ec824c762790bfec99aaa9f6143dc8c71a47
                       <option>Demande de cotation</option>
                       <option>Partenariat technique</option>
                       <option>Support & Maintenance</option>
@@ -678,9 +712,15 @@ export default function App() {
                   </div>
                   <div className="space-y-3">
                     <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Message</label>
+<<<<<<< HEAD
                     <textarea rows={4} required value={contactForm.message} onChange={e => setContactForm(f => ({ ...f, message: e.target.value }))} className="w-full px-6 py-4 rounded-2xl border border-slate-100 bg-slate-50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-red-700/5 focus:border-red-700 transition-all" placeholder="Décrivez votre besoin en quelques mots..."></textarea>
                   </div>
                   <button type="submit" className="w-full py-5 bg-slate-900 text-white rounded-2xl font-bold hover:bg-red-700 transition-all shadow-xl hover:shadow-red-700/20 active:scale-[0.98]">
+=======
+                    <textarea rows={4} className="w-full px-6 py-4 rounded-2xl border border-slate-100 bg-slate-50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-red-700/5 focus:border-red-700 transition-all" placeholder="Décrivez votre besoin en quelques mots..."></textarea>
+                  </div>
+                  <button className="w-full py-5 bg-slate-900 text-white rounded-2xl font-bold hover:bg-red-700 transition-all shadow-xl hover:shadow-red-700/20 active:scale-[0.98]">
+>>>>>>> 7f08ec824c762790bfec99aaa9f6143dc8c71a47
                     Envoyer la demande
                   </button>
                 </form>
@@ -710,14 +750,24 @@ export default function App() {
               </div>
               <div>
                 <p className="text-sm font-bold text-slate-900">NEEMA ENGENEERING SUPPLY</p>
+<<<<<<< HEAD
                 <p className="text-[10px] font-bold text-red-700 uppercase tracking-widest">© 2025 - Tous droits réservés</p>
+=======
+                <p className="text-[10px] font-bold text-red-700 uppercase tracking-widest">© 2024 - Tous droits réservés</p>
+>>>>>>> 7f08ec824c762790bfec99aaa9f6143dc8c71a47
               </div>
             </div>
             
             <div className="flex gap-8">
+<<<<<<< HEAD
               <a href="#legal" className="text-slate-400 hover:text-red-700 transition-colors" title="Conformité & Légalité"><ShieldCheck size={20} /></a>
               <a href={`mailto:${CONTACT_EMAIL}`} className="text-slate-400 hover:text-red-700 transition-colors" title="Nous écrire"><Mail size={20} /></a>
               <a href="#contact" className="text-slate-400 hover:text-red-700 transition-colors" title="Contact & Adresse"><MapPin size={20} /></a>
+=======
+              <a href="#" className="text-slate-400 hover:text-red-700 transition-colors"><ShieldCheck size={20} /></a>
+              <a href="#" className="text-slate-400 hover:text-red-700 transition-colors"><Mail size={20} /></a>
+              <a href="#" className="text-slate-400 hover:text-red-700 transition-colors"><MapPin size={20} /></a>
+>>>>>>> 7f08ec824c762790bfec99aaa9f6143dc8c71a47
             </div>
           </div>
         </div>
