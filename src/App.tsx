@@ -13,7 +13,6 @@ import {
   Phone, 
   Mail, 
   MapPin, 
-  FileText, 
   CheckCircle2, 
   Menu, 
   X,
@@ -21,11 +20,6 @@ import {
   HardHat,
   Sun,
   ShieldCheck,
-  Award,
-  Scale,
-  Building2,
-  Fingerprint,
-  CreditCard,
   Download
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -80,14 +74,6 @@ const SERVICES = [
     details: ['Installation de climatiseurs', 'Maintenance préventive et curative', 'Chambres froides industrielles', 'Maintenance du gaz']
   }
 ];
-
-const LEGAL_INFO = [
-  { label: 'Numéro ARSP', value: '4598203574', icon: Award },
-  { label: 'Numéro RCCM', value: 'CD/LSH/RCCM/24-B-00751', icon: Scale },
-  { label: 'Identification Nationale', value: '05-F4300-N05807D', icon: Fingerprint },
-  { label: 'Numéro Impôt', value: 'A2415090E', icon: CreditCard },
-  { label: 'Affiliation CNSS', value: '1020391100', icon: Building2 }
-  ];
 
 const CONTACT_EMAIL = 'contact@nes-sarlu.cd';
 
@@ -151,8 +137,7 @@ export default function App() {
                 { name: 'À Propos', href: '#about' },
 { name: 'Services', href: '#services' },
                 { name: 'Catalogue', href: '#catalogue' },
-                { name: 'Réalisations', href: '#realisations' },
-                { name: 'Légal', href: '#legal' }
+                { name: 'Réalisations', href: '#realisations' }
               ].map((link) => (
                 <a 
                   key={link.name}
@@ -191,8 +176,7 @@ export default function App() {
                   { name: 'À Propos', href: '#about' },
 { name: 'Services', href: '#services' },
                 { name: 'Catalogue', href: '#catalogue' },
-                { name: 'Réalisations', href: '#realisations' },
-                  { name: 'Légal', href: '#legal' }
+                { name: 'Réalisations', href: '#realisations' }
                 ].map((link) => (
                   <a 
                     key={link.name}
@@ -539,84 +523,6 @@ export default function App() {
         </AnimatePresence>
       </section>
 
-      {/* Legal Section */}
-      <section id="legal" className="py-16 sm:py-24 lg:py-32 bg-slate-950 text-white relative overflow-hidden">
-        {/* Decorative background elements */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-red-700 blur-[120px]"></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-slate-700 blur-[120px]"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-3 min-[400px]:px-4 sm:px-6 lg:px-8 relative z-10 w-full min-w-0">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h3 className="text-xl min-[400px]:text-2xl sm:text-3xl md:text-4xl font-bold mb-3 min-[400px]:mb-4">Conformité & Légalité</h3>
-            <p className="text-slate-400 max-w-2xl mx-auto text-xs min-[400px]:text-sm">
-              NEEMA ENGENEERING SUPPLY SARLU opère dans le strict respect du cadre réglementaire de la République Démocratique du Congo.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {/* Legal Cards Grid */}
-            <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 min-[400px]:gap-4">
-              {LEGAL_INFO.map((info, idx) => (
-                <motion.div 
-                  key={idx}
-                  whileHover={{ y: -5 }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 p-4 min-[400px]:p-6 rounded-xl min-[400px]:rounded-2xl flex items-center gap-3 min-[400px]:gap-5 group transition-all hover:bg-white/10 min-w-0"
-                >
-                  <div className="w-10 h-10 min-[400px]:w-12 min-[400px]:h-12 rounded-lg min-[400px]:rounded-xl bg-red-700/20 flex items-center justify-center text-red-500 group-hover:bg-red-700 group-hover:text-white transition-all shrink-0">
-                    <info.icon size={20} className="min-[400px]:w-6 min-[400px]:h-6" />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-[9px] min-[400px]:text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-0.5 min-[400px]:mb-1">{info.label}</p>
-                    <p className="text-xs min-[400px]:text-sm font-mono font-bold text-white tracking-tight break-all">{info.value}</p>
-                  </div>
-                </motion.div>
-              ))}
-              
-              {/* Additional Status Card */}
-              <div className="bg-emerald-500/10 border border-emerald-500/20 p-4 min-[400px]:p-6 rounded-xl min-[400px]:rounded-2xl flex items-center gap-3 min-[400px]:gap-5 sm:col-span-2 lg:col-span-1">
-                <div className="w-10 h-10 min-[400px]:w-12 min-[400px]:h-12 rounded-lg min-[400px]:rounded-xl bg-emerald-500 flex items-center justify-center text-white shrink-0">
-                  <ShieldCheck size={20} className="min-[400px]:w-6 min-[400px]:h-6" />
-                </div>
-                <div className="min-w-0">
-                  <p className="text-[9px] min-[400px]:text-[10px] font-bold text-emerald-500 uppercase tracking-widest mb-0.5 min-[400px]:mb-1">Statut Entreprise</p>
-                  <p className="text-xs min-[400px]:text-sm font-bold text-white">Active & En règle</p>
-                </div>
-              </div>
-            </div>
-
-            {/* ARSP Highlight Card */}
-            <div className="bg-gradient-to-br from-red-700 to-red-900 p-5 min-[400px]:p-6 sm:p-8 rounded-2xl min-[480px]:rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-2 min-[400px]:p-4 opacity-10 group-hover:scale-110 transition-transform">
-                <Award size={80} className="min-[400px]:w-[120px] min-[400px]:h-[120px]" />
-              </div>
-              
-              <div className="relative z-10">
-                <div className="w-12 h-12 min-[400px]:w-16 min-[400px]:h-16 bg-white/20 backdrop-blur-md rounded-xl min-[400px]:rounded-2xl flex items-center justify-center text-white mb-5 min-[400px]:mb-8">
-                  <FileText size={24} className="min-[400px]:w-8 min-[400px]:h-8" />
-                </div>
-                <h4 className="text-lg min-[400px]:text-xl sm:text-2xl font-bold mb-3 min-[400px]:mb-4">Attestation ARSP</h4>
-                <p className="text-red-100 text-xs min-[400px]:text-sm leading-relaxed mb-5 min-[400px]:mb-8">
-                  Enregistré officiellement en qualité de Sous-traitant dans le secteur privé, NES Sarlu est habilité à intervenir sur les grands projets miniers et industriels nationaux.
-                </p>
-                
-                <div className="space-y-3 min-[400px]:space-y-4">
-                  <div className="flex items-start gap-2 min-[400px]:gap-3 text-[10px] min-[400px]:text-xs font-bold text-white/80 bg-black/20 p-2.5 min-[400px]:p-3 rounded-lg min-[400px]:rounded-xl">
-                    <CheckCircle2 size={14} className="min-[400px]:w-4 min-[400px]:h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <span>Art. 6 de l'Arrêté n°02/CAB/MIN/CMPMEA/2021</span>
-                  </div>
-                  <div className="flex items-start gap-2 min-[400px]:gap-3 text-[10px] min-[400px]:text-xs font-bold text-white/80 bg-black/20 p-2.5 min-[400px]:p-3 rounded-lg min-[400px]:rounded-xl">
-                    <CheckCircle2 size={14} className="min-[400px]:w-4 min-[400px]:h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <span>Conformité Loi n°17/001</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-16 sm:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-3 min-[400px]:px-4 sm:px-6 lg:px-8 w-full min-w-0">
@@ -706,8 +612,9 @@ export default function App() {
       </motion.button>
 
       {/* Footer */}
-      <footer className="py-8 sm:py-12 bg-slate-50 border-t border-slate-200">
+      <footer id="footer" className="py-8 sm:py-12 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-3 min-[400px]:px-4 sm:px-6 lg:px-8 w-full min-w-0">
+          {/* Ligne principale : logo, nom, copyright, liens */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8 text-center md:text-left">
             <div className="flex flex-col sm:flex-row items-center gap-3 min-w-0">
               <img src="/logo.png" alt="NES Neema Engineering Supply" className="h-8 min-[400px]:h-10 w-auto object-contain shrink-0" />
@@ -716,9 +623,7 @@ export default function App() {
                 <p className="text-[9px] min-[400px]:text-[10px] font-bold text-red-700 uppercase tracking-widest">© 2025 - Tous droits réservés</p>
               </div>
             </div>
-            
             <div className="flex gap-6 min-[400px]:gap-8">
-              <a href="#legal" className="text-slate-400 hover:text-red-700 transition-colors p-1" title="Conformité & Légalité"><ShieldCheck size={18} className="min-[400px]:w-5 min-[400px]:h-5" /></a>
               <a href={`mailto:${CONTACT_EMAIL}`} className="text-slate-400 hover:text-red-700 transition-colors p-1" title="Nous écrire"><Mail size={18} className="min-[400px]:w-5 min-[400px]:h-5" /></a>
               <a href="#contact" className="text-slate-400 hover:text-red-700 transition-colors p-1" title="Contact & Adresse"><MapPin size={18} className="min-[400px]:w-5 min-[400px]:h-5" /></a>
             </div>
