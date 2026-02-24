@@ -136,15 +136,13 @@ export default function App() {
       }`}>
         <div className="max-w-7xl mx-auto px-3 min-[400px]:px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-14 min-[400px]:h-16 items-center">
-            <div className="flex items-center gap-2 min-[400px]:gap-3 group cursor-pointer shrink-0" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-              <div className="w-9 h-9 min-[400px]:w-10 min-[400px]:h-10 bg-red-700 rounded-lg min-[400px]:rounded-xl flex items-center justify-center text-white font-bold text-sm min-[400px]:text-lg shadow-lg group-hover:scale-105 transition-transform">
-                NES
-              </div>
+            <a href="#home" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-2 min-[400px]:gap-3 group shrink-0" aria-label="NES Neema Engineering Supply - Accueil">
+              <img src="/logo.png" alt="NES Neema Engineering Supply" className="h-8 min-[400px]:h-10 w-auto object-contain group-hover:opacity-90 transition-opacity" />
               <div className="hidden sm:block">
                 <h1 className="text-sm font-extrabold leading-none tracking-tight text-slate-900">NEEMA ENGENEERING</h1>
                 <p className="text-[10px] font-bold text-red-700 tracking-widest uppercase">Supply Sarlu</p>
               </div>
-            </div>
+            </a>
 
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-1">
@@ -712,9 +710,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-3 min-[400px]:px-4 sm:px-6 lg:px-8 w-full min-w-0">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8 text-center md:text-left">
             <div className="flex flex-col sm:flex-row items-center gap-3 min-w-0">
-              <div className="w-9 h-9 min-[400px]:w-10 min-[400px]:h-10 bg-red-700 rounded-lg flex items-center justify-center text-white text-sm min-[400px]:text-base font-bold shadow-md shrink-0">
-                NES
-              </div>
+              <img src="/logo.png" alt="NES Neema Engineering Supply" className="h-8 min-[400px]:h-10 w-auto object-contain shrink-0" />
               <div className="min-w-0">
                 <p className="text-xs min-[400px]:text-sm font-bold text-slate-900 break-words">NEEMA ENGENEERING SUPPLY</p>
                 <p className="text-[9px] min-[400px]:text-[10px] font-bold text-red-700 uppercase tracking-widest">© 2025 - Tous droits réservés</p>
