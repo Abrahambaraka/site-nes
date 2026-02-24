@@ -12,10 +12,13 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   
   body {
     @apply antialiased text-slate-900 bg-[#FDFDFD];
+    overflow-x: hidden;
+    min-width: 0;
   }
 }
 
