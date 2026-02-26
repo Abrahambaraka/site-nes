@@ -14,7 +14,6 @@ import {
   Mail, 
   MapPin, 
   CheckCircle2, 
-  Menu, 
   X,
   ChevronRight,
   HardHat,
@@ -117,6 +116,20 @@ export default function App() {
 
   return (
     <div className="min-h-screen min-w-0 overflow-x-hidden bg-[#F9F9F9] font-sans text-slate-900">
+      {/* Bandeau téléphonique */}
+      <div className="bg-[#E31B23] text-white text-[10px] sm:text-xs">
+        <div className="max-w-7xl mx-auto px-3 min-[400px]:px-4 sm:px-6 lg:px-8 py-1 flex flex-wrap items-center justify-center md:justify-end gap-2 sm:gap-3">
+          <span className="font-semibold tracking-wide">Contact direct :</span>
+          <a href="tel:+243997662228" className="font-bold hover:underline">
+            +243 997 662 228
+          </a>
+          <span>/</span>
+          <a href="tel:+243978005859" className="font-bold hover:underline">
+            +243 978 005 859
+          </a>
+        </div>
+      </div>
+
       {/* Navigation inspirée des sites média (Jeune Afrique) */}
       <nav className={`fixed top-0 left-0 right-0 z-50 border-b border-slate-200 transition-all duration-300 ${
         isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-sm' : 'bg-white'
@@ -128,12 +141,11 @@ export default function App() {
             <div className="flex items-center gap-2 md:gap-3">
               <button
                 type="button"
-                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm hover:bg-slate-50 md:px-3.5"
+              className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-3.5 py-1.5 text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] text-slate-700 shadow-sm hover:bg-slate-50 md:px-4 uppercase"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
               >
-                <Menu size={16} className="mr-1" />
-                <span className="hidden sm:inline">Menu</span>
+              NEEMA ENGENEERING SUPPLY SARLU
               </button>
             </div>
 
