@@ -163,7 +163,7 @@ export default function App() {
               className="flex-1 flex items-center justify-center"
               aria-label="NES Neema Engineering Supply - Accueil"
             >
-              <p className="text-[11px] sm:text-xs md:text-sm font-extrabold tracking-[0.32em] uppercase text-center">
+              <p className="text-[10px] sm:text-[11px] md:text-xs font-extrabold tracking-[0.18em] uppercase text-center">
                 <span className="text-[#1A1A1A]">NEEMA ENGENEERING</span>{' '}
                 <span className="text-[#E31B23]">SUPPLY SARLU</span>
               </p>
