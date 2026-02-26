@@ -20,7 +20,8 @@ import {
   HardHat,
   Sun,
   ShieldCheck,
-  Download
+  Download,
+  Search
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -115,86 +116,146 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen min-w-0 overflow-x-hidden bg-[#F8F9FA] font-sans text-slate-900">
-      {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 backdrop-blur-lg shadow-sm py-1.5 sm:py-2' : 'bg-transparent py-3 sm:py-4'
+    <div className="min-h-screen min-w-0 overflow-x-hidden bg-[#F9F9F9] font-sans text-slate-900">
+      {/* Navigation inspirée des sites média (Jeune Afrique) */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 border-b border-slate-200 transition-all duration-300 ${
+        isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-sm' : 'bg-white'
       }`}>
         <div className="max-w-7xl mx-auto px-3 min-[400px]:px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-14 min-[400px]:h-16 items-center">
-            <a href="#home" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-2 min-[400px]:gap-3 group shrink-0" aria-label="NES Neema Engineering Supply - Accueil">
-              <img src="/logo.png" alt="NES Neema Engineering Supply" className="h-8 min-[400px]:h-10 w-auto object-contain group-hover:opacity-90 transition-opacity" />
-              <div className="hidden sm:block">
-                <h1 className="text-sm font-extrabold leading-none tracking-tight text-slate-900">NEEMA ENGENEERING</h1>
-                <p className="text-[10px] font-bold text-red-700 tracking-widest uppercase">Supply Sarlu</p>
-              </div>
+          {/* Ligne 1 : menu / logo centré / actions */}
+          <div className="flex items-center justify-between h-14 min-[400px]:h-16 gap-4">
+            {/* Bouton menu (mobile + texte Menu sur desktop) */}
+            <div className="flex items-center gap-2 md:gap-3">
+              <button
+                type="button"
+                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm hover:bg-slate-50 md:px-3.5"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              >
+                <Menu size={16} className="mr-1" />
+                <span className="hidden sm:inline">Menu</span>
+              </button>
+            </div>
+
+            {/* Logo centré */}
+            <a
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="flex-1 flex justify-center"
+              aria-label="NES Neema Engineering Supply - Accueil"
+            >
+              <img
+                src="/logo.png"
+                alt="NES Neema Engineering Supply"
+                className="h-7 min-[400px]:h-8 sm:h-9 w-auto object-contain"
+              />
             </a>
 
-            {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-1">
+            {/* Actions droites (type Jeune Afrique) */}
+            <div className="hidden md:flex items-center gap-4 text-sm font-semibold">
+              <button className="text-slate-700 hover:text-red-700 transition-colors">
+                Magazine
+              </button>
+              <button className="text-slate-700 hover:text-red-700 transition-colors">
+                Se connecter
+              </button>
+              <a
+                href="#contact"
+                className="inline-flex items-center rounded-full bg-[#E31B23] px-4 py-1.5 text-xs font-bold text-white shadow-sm hover:bg-red-700 transition-colors"
+              >
+                S&apos;abonner
+              </a>
+            </div>
+
+            {/* Icônes rapides sur mobile (recherche + contact) */}
+            <div className="flex items-center gap-2 md:hidden">
+              <button
+                type="button"
+                className="p-2 rounded-full border border-slate-200 text-slate-600 hover:bg-slate-50"
+                aria-label="Rechercher"
+              >
+                <Search size={18} />
+              </button>
+              <a
+                href="#contact"
+                className="px-3 py-1.5 rounded-full bg-[#E31B23] text-[11px] font-bold text-white shadow-sm hover:bg-red-700"
+              >
+                S&apos;abonner
+              </a>
+            </div>
+          </div>
+
+          {/* Ligne 2 : barre de recherche + navigation rubriques (desktop) */}
+          <div className="hidden md:flex items-center gap-6 pb-3">
+            {/* Barre de recherche */}
+            <div className="relative flex-1 max-w-xl">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+              <input
+                type="search"
+                placeholder="Rechercher un service, un projet, une solution..."
+                className="w-full rounded-full border border-slate-200 bg-slate-50 py-2.5 pl-9 pr-4 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#E31B23]/20 focus:border-[#E31B23] transition"
+              />
+            </div>
+
+            {/* Rubriques principales */}
+            <div className="flex items-center gap-3 text-xs font-semibold text-slate-600">
               {[
                 { name: 'Accueil', href: '#home' },
                 { name: 'À Propos', href: '#about' },
-{ name: 'Services', href: '#services' },
+                { name: 'Services', href: '#services' },
                 { name: 'Catalogue', href: '#catalogue' },
-                { name: 'Réalisations', href: '#realisations' }
+                { name: 'Réalisations', href: '#realisations' },
               ].map((link) => (
-                <a 
+                <a
                   key={link.name}
-                  href={link.href} 
-                  className="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-red-700 rounded-lg hover:bg-red-50 transition-all"
+                  href={link.href}
+                  className="px-2 py-1 rounded-full hover:text-[#E31B23] hover:bg-red-50 transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
-              <div className="ml-4 pl-4 border-l border-slate-200">
-                <a href="#contact" className="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-red-700 transition-all shadow-md hover:shadow-lg active:scale-95">
-                  Contact
-                </a>
-              </div>
             </div>
-
-            {/* Mobile Menu Toggle */}
-            <button type="button" className="md:hidden p-2 -mr-1 touch-manipulation" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}>
-              {isMenuOpen ? <X size={22} className="min-[400px]:w-6 min-[400px]:h-6" /> : <Menu size={22} className="min-[400px]:w-6 min-[400px]:h-6" />}
-            </button>
           </div>
         </div>
 
-        {/* Mobile Nav */}
+        {/* Mobile Nav plein écran inspiré "menu" */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div 
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="md:hidden fixed inset-x-0 top-[3.5rem] min-[400px]:top-20 bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-2xl z-40"
+              exit={{ opacity: 0, y: -10 }}
+              className="md:hidden fixed inset-x-0 top-14 bg-white/98 backdrop-blur-xl border-b border-slate-200 shadow-2xl z-40"
             >
-              <div className="px-4 py-8 min-[400px]:px-6 min-[400px]:py-10 space-y-5 min-[400px]:space-y-6">
-                {[
-                  { name: 'Accueil', href: '#home' },
-                  { name: 'À Propos', href: '#about' },
-{ name: 'Services', href: '#services' },
-                { name: 'Catalogue', href: '#catalogue' },
-                { name: 'Réalisations', href: '#realisations' }
-                ].map((link) => (
-                  <a 
-                    key={link.name}
-                    href={link.href} 
-                    onClick={() => setIsMenuOpen(false)} 
-                    className="block text-lg min-[400px]:text-xl font-bold text-slate-900 hover:text-red-700 transition-colors py-1"
-                  >
-                    {link.name}
-                  </a>
-                ))}
-                <div className="pt-6 border-t border-slate-100">
-                  <a 
-                    href="#contact" 
-                    onClick={() => setIsMenuOpen(false)} 
-                    className="block w-full py-4 bg-red-700 text-white text-center rounded-2xl font-bold shadow-lg"
-                  >
-                    Contactez-nous
-                  </a>
+              <div className="px-4 py-8 space-y-6">
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+                  <input
+                    type="search"
+                    placeholder="Rechercher..."
+                    className="w-full rounded-full border border-slate-200 bg-slate-50 py-2.5 pl-9 pr-4 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#E31B23]/20 focus:border-[#E31B23] transition"
+                  />
+                </div>
+                <div className="space-y-3">
+                  {[
+                    { name: 'Accueil', href: '#home' },
+                    { name: 'À Propos', href: '#about' },
+                    { name: 'Services', href: '#services' },
+                    { name: 'Catalogue', href: '#catalogue' },
+                    { name: 'Réalisations', href: '#realisations' },
+                  ].map((link) => (
+                    <a 
+                      key={link.name}
+                      href={link.href} 
+                      onClick={() => setIsMenuOpen(false)} 
+                      className="block text-base font-bold text-slate-900 hover:text-[#E31B23] transition-colors py-1"
+                    >
+                      {link.name}
+                    </a>
+                  ))}
                 </div>
               </div>
             </motion.div>
