@@ -340,10 +340,9 @@ export default function App() {
             <div className="relative order-2 lg:order-1">
               <div className="aspect-[4/5] rounded-2xl min-[480px]:rounded-[2.5rem] lg:rounded-[3rem] overflow-hidden shadow-2xl relative z-10">
                 <img 
-                  src="https://picsum.photos/seed/industrial/800/1000" 
-                  alt="Industrial Supply" 
+                  src="/about-nes.png" 
+                  alt="Ingénieur NES sur chantier" 
                   className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
                   loading="lazy"
                   decoding="async"
                 />
