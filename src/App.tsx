@@ -322,7 +322,7 @@ export default function App() {
               className="relative hidden lg:block"
             >
               <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
-                <img src="https://picsum.photos/seed/heavy/800/1000" alt="Heavy Machinery" className="w-full h-auto" />
+                <img src="/hero-nes.png" alt="Ingénieur NES sur chantier" className="w-full h-auto object-cover" />
               </div>
               <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-red-700/10 rounded-full blur-3xl -z-10"></div>
               <div className="absolute -top-10 -right-10 w-64 h-64 bg-slate-900/10 rounded-full blur-3xl -z-10"></div>
