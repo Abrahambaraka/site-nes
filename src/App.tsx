@@ -14,6 +14,7 @@ import {
   Mail, 
   MapPin, 
   CheckCircle2, 
+  Menu,
   X,
   ChevronRight,
   HardHat,
@@ -137,33 +138,38 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-3 min-[400px]:px-4 sm:px-6 lg:px-8">
           {/* Ligne 1 : menu / logo centré / actions */}
           <div className="flex items-center justify-between h-14 min-[400px]:h-16 gap-4">
-            {/* Bouton menu (mobile + texte Menu sur desktop) */}
-            <div className="flex items-center gap-2 md:gap-3">
-              <button
-                type="button"
-              className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-3.5 py-1.5 text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] text-slate-700 shadow-sm hover:bg-slate-50 md:px-4 uppercase"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-              >
-              NEEMA ENGENEERING SUPPLY SARLU
-              </button>
-            </div>
+          {/* Bouton menu (mobile + texte discret sur desktop) */}
+          <div className="flex items-center gap-2 md:gap-3">
+            <button
+              type="button"
+              className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[9px] sm:text-[10px] font-semibold text-slate-700 shadow-sm hover:bg-slate-50 md:px-3.5"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            >
+              <Menu size={14} className="mr-1" />
+              <span className="hidden sm:inline">Menu</span>
+            </button>
+          </div>
 
-            {/* Logo centré */}
+            {/* Logo + titre centré (style Jeune Afrique) */}
             <a
               href="#home"
               onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="flex-1 flex justify-center"
+              className="flex-1 flex flex-col items-center justify-center gap-1"
               aria-label="NES Neema Engineering Supply - Accueil"
             >
               <img
                 src="/logo.png"
                 alt="NES Neema Engineering Supply"
-                className="h-7 min-[400px]:h-8 sm:h-9 w-auto object-contain"
+                className="h-6 min-[400px]:h-7 sm:h-8 w-auto object-contain"
               />
+              <p className="text-[9px] sm:text-[10px] md:text-xs font-extrabold tracking-[0.25em] uppercase text-center">
+                <span className="text-[#1A1A1A]">NEEMA ENGENEERING</span>{' '}
+                <span className="text-[#E31B23]">SUPPLY SARLU</span>
+              </p>
             </a>
 
             {/* Action droite : bouton S'abonner uniquement */}
