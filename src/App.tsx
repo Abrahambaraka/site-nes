@@ -154,14 +154,8 @@ export default function App() {
               />
             </a>
 
-            {/* Actions droites (type Jeune Afrique) */}
+            {/* Action droite : bouton S'abonner uniquement */}
             <div className="hidden md:flex items-center gap-4 text-sm font-semibold">
-              <button className="text-slate-700 hover:text-red-700 transition-colors">
-                Magazine
-              </button>
-              <button className="text-slate-700 hover:text-red-700 transition-colors">
-                Se connecter
-              </button>
               <a
                 href="#contact"
                 className="inline-flex items-center rounded-full bg-[#E31B23] px-4 py-1.5 text-xs font-bold text-white shadow-sm hover:bg-red-700 transition-colors"
@@ -456,6 +450,19 @@ export default function App() {
               <Download size={20} className="min-[400px]:w-6 min-[400px]:h-6 shrink-0" />
               <span className="whitespace-nowrap">Télécharger le catalogue (PDF)</span>
             </a>
+          </div>
+          {/* Aperçu intégré du catalogue PDF */}
+          <div className="mt-10 max-w-5xl mx-auto">
+            <div className="aspect-[3/4] w-full rounded-2xl border border-slate-200 shadow-sm overflow-hidden bg-slate-50">
+              <iframe
+                src="/catalogue.pdf#view=fitH"
+                title="Catalogue NES (PDF)"
+                className="w-full h-full"
+              />
+            </div>
+            <p className="mt-3 text-[11px] min-[400px]:text-xs text-slate-500 text-center">
+              Si le document ne s&apos;affiche pas correctement dans votre navigateur, utilisez le bouton ci-dessus pour télécharger le catalogue en PDF.
+            </p>
           </div>
         </div>
       </section>
