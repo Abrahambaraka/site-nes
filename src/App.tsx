@@ -445,20 +445,20 @@ export default function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 sm:py-24 lg:py-32 bg-white">
+      <section id="contact" className="py-10 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-3 min-[400px]:px-4 sm:px-6 lg:px-8 w-full min-w-0">
-          <div className="bg-slate-900 rounded-2xl min-[480px]:rounded-3xl lg:rounded-[3.5rem] overflow-hidden shadow-2xl relative">
+          <div className="bg-slate-900 rounded-2xl min-[480px]:rounded-3xl lg:rounded-[3rem] overflow-hidden shadow-2xl relative">
             <div className="absolute top-0 right-0 w-96 h-96 bg-red-700/10 rounded-full blur-[100px] -z-0"></div>
             
             <div className="grid lg:grid-cols-2 relative z-10">
-              <div className="p-6 min-[400px]:p-8 sm:p-12 lg:p-24 bg-gradient-to-br from-red-700 to-red-900 text-white">
+              <div className="p-5 min-[400px]:p-7 sm:p-10 lg:p-14 bg-gradient-to-br from-red-700 to-red-900 text-white">
                 <h3 className="text-[10px] min-[400px]:text-sm font-bold text-red-200 uppercase tracking-[0.2em] mb-4 min-[400px]:mb-6">Contact</h3>
                 <h4 className="text-2xl min-[400px]:text-3xl sm:text-4xl md:text-5xl font-extrabold mb-5 min-[400px]:mb-8 tracking-tight">Parlons de votre Projet</h4>
-                <p className="text-red-100 mb-8 min-[400px]:mb-12 lg:mb-16 text-sm min-[400px]:text-base sm:text-lg leading-relaxed opacity-80">
+                <p className="text-red-100 mb-6 min-[400px]:mb-9 lg:mb-12 text-sm min-[400px]:text-base sm:text-lg leading-relaxed opacity-80">
                   Nos experts sont disponibles pour analyser vos besoins et vous proposer des solutions techniques optimales.
                 </p>
                 
-                <div className="space-y-6 min-[400px]:space-y-10">
+                <div className="space-y-5 min-[400px]:space-y-8">
                   <div className="flex items-start gap-4 min-[400px]:gap-8 group">
                     <div className="w-11 h-11 min-[400px]:w-14 min-[400px]:h-14 bg-white/10 rounded-xl min-[400px]:rounded-2xl flex items-center justify-center group-hover:bg-white group-hover:text-red-700 transition-all duration-300 shrink-0">
                       <Phone size={22} className="min-[400px]:w-7 min-[400px]:h-7" />
@@ -485,19 +485,19 @@ export default function App() {
                 </div>
               </div>
               
-              <div className="p-6 min-[400px]:p-8 sm:p-12 lg:p-24 bg-white">
-                <form className="space-y-5 min-[400px]:space-y-6 sm:space-y-8" onSubmit={handleContactSubmit}>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 min-[400px]:gap-6 sm:gap-8">
-                    <div className="space-y-2 min-[400px]:space-y-3">
+              <div className="p-5 min-[400px]:p-7 sm:p-10 lg:p-14 bg-white">
+                <form className="space-y-4 min-[400px]:space-y-5 sm:space-y-6" onSubmit={handleContactSubmit}>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 min-[400px]:gap-5 sm:gap-6">
+                    <div className="space-y-2">
                       <label className="text-[9px] min-[400px]:text-[10px] font-bold uppercase tracking-widest text-slate-400">Nom Complet</label>
                       <input type="text" required value={contactForm.name} onChange={e => setContactForm(f => ({ ...f, name: e.target.value }))} className="w-full min-w-0 px-4 py-3 min-[400px]:px-6 min-[400px]:py-4 rounded-xl min-[400px]:rounded-2xl border border-slate-100 bg-slate-50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-red-700/5 focus:border-red-700 transition-all text-base" placeholder="Jean Dupont" />
                     </div>
-                    <div className="space-y-2 min-[400px]:space-y-3">
+                    <div className="space-y-2">
                       <label className="text-[9px] min-[400px]:text-[10px] font-bold uppercase tracking-widest text-slate-400">Email Professionnel</label>
                       <input type="email" required value={contactForm.email} onChange={e => setContactForm(f => ({ ...f, email: e.target.value }))} className="w-full min-w-0 px-4 py-3 min-[400px]:px-6 min-[400px]:py-4 rounded-xl min-[400px]:rounded-2xl border border-slate-100 bg-slate-50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-red-700/5 focus:border-red-700 transition-all text-base" placeholder="jean@entreprise.com" />
                     </div>
                   </div>
-                  <div className="space-y-2 min-[400px]:space-y-3">
+                  <div className="space-y-2">
                     <label className="text-[9px] min-[400px]:text-[10px] font-bold uppercase tracking-widest text-slate-400">Objet de la demande</label>
                     <select value={contactForm.subject} onChange={e => setContactForm(f => ({ ...f, subject: e.target.value }))} className="w-full min-w-0 px-4 py-3 min-[400px]:px-6 min-[400px]:py-4 rounded-xl min-[400px]:rounded-2xl border border-slate-100 bg-slate-50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-red-700/5 focus:border-red-700 transition-all appearance-none cursor-pointer text-base">
                       <option>Demande de cotation</option>
@@ -506,7 +506,7 @@ export default function App() {
                       <option>Autre</option>
                     </select>
                   </div>
-                  <div className="space-y-2 min-[400px]:space-y-3">
+                  <div className="space-y-2">
                     <label className="text-[9px] min-[400px]:text-[10px] font-bold uppercase tracking-widest text-slate-400">Message</label>
                     <textarea rows={4} required value={contactForm.message} onChange={e => setContactForm(f => ({ ...f, message: e.target.value }))} className="w-full min-w-0 px-4 py-3 min-[400px]:px-6 min-[400px]:py-4 rounded-xl min-[400px]:rounded-2xl border border-slate-100 bg-slate-50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-red-700/5 focus:border-red-700 transition-all resize-y text-base" placeholder="Décrivez votre besoin en quelques mots..."></textarea>
                   </div>
