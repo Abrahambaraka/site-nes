@@ -151,7 +151,7 @@ export default function App() {
 
             {/* Titre centré */}
             <div className="flex-1 flex justify-center">
-              <p className="text-[10px] sm:text-[11px] md:text-xs font-extrabold tracking-[0.18em] uppercase text-center">
+              <p className="text-xs sm:text-sm md:text-base font-extrabold tracking-[0.12em] uppercase text-center">
                 <span className="text-[#1A1A1A]">NEEMA ENGENEERING</span>{' '}
                 <span className="text-[#E31B23]">SUPPLY SARLU</span>
               </p>
@@ -218,7 +218,6 @@ export default function App() {
                     { name: 'À Propos', href: '#about' },
                     { name: 'Services', href: '#services' },
                     { name: 'Catalogue', href: '#catalogue' },
-                    { name: 'Réalisations', href: '#realisations' },
                   ].map((link) => (
                     <a 
                       key={link.name}
@@ -443,130 +442,6 @@ export default function App() {
             </p>
           </div>
         </div>
-      </section>
-
-      {/* Realisations Section */}
-      <section id="realisations" className="py-16 sm:py-24 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-3 min-[400px]:px-4 sm:px-6 lg:px-8 w-full min-w-0">
-          <div className="flex flex-col items-center text-center mb-8 sm:mb-12 lg:mb-16">
-            <h3 className="text-xs min-[400px]:text-sm font-bold text-red-700 uppercase tracking-[0.2em] mb-3 min-[400px]:mb-4">Portfolio</h3>
-            <h4 className="text-2xl min-[400px]:text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-5 min-[400px]:mb-8">Nos Réalisations</h4>
-            
-            {/* Gallery Filters */}
-            <div className="flex flex-wrap justify-center gap-1.5 min-[400px]:gap-2 p-1.5 bg-slate-100 rounded-xl min-[400px]:rounded-2xl w-full max-w-full overflow-hidden">
-              {['all', 'machinery', 'electrical', 'civil', 'trucks', 'hvac'].map((cat) => (
-                <button
-                  key={cat}
-                  type="button"
-                  onClick={() => setFilter(cat)}
-                  className={`px-3 py-2 min-[400px]:px-6 min-[400px]:py-2.5 rounded-lg min-[400px]:rounded-xl text-[10px] min-[400px]:text-xs font-bold transition-all shrink-0 ${
-                    filter === cat 
-                    ? 'bg-white text-slate-900 shadow-sm' 
-                    : 'text-slate-500 hover:text-slate-900'
-                  }`}
-                >
-                  {cat === 'all' ? 'Tout' : SERVICES.find(s => s.id === cat)?.title.split(' ')[0] || cat}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <motion.div 
-            layout
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
-          >
-            <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project) => (
-                <motion.div
-                  key={project.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4 }}
-                  viewport={{ once: true }}
-                  className="group relative cursor-pointer overflow-hidden rounded-2xl min-[480px]:rounded-[2.5rem] shadow-lg hover:shadow-2xl transition-all duration-500 min-w-0"
-                  onClick={() => setSelectedProject(project)}
-                >
-                  <div className="aspect-[4/5]">
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      referrerPolicy="no-referrer"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
-                  <div className="absolute inset-0 flex flex-col justify-end p-4 min-[400px]:p-6 sm:p-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <span className="text-red-500 text-[9px] min-[400px]:text-[10px] font-bold uppercase tracking-widest mb-1 min-[400px]:mb-2">
-                      {SERVICES.find(s => s.id === project.category)?.title}
-                    </span>
-                    <h4 className="text-white font-bold text-base min-[400px]:text-lg sm:text-2xl mb-1 min-[400px]:mb-2">{project.title}</h4>
-                    <p className="text-white/60 text-[10px] min-[400px]:text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 line-clamp-2">
-                      {project.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-        </div>
-
-        {/* Lightbox Modal */}
-        <AnimatePresence>
-          {selectedProject && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/90 p-2 min-[400px]:p-4 overflow-y-auto"
-              onClick={() => setSelectedProject(null)}
-            >
-              <motion.div
-                initial={{ scale: 0.9, y: 20 }}
-                animate={{ scale: 1, y: 0 }}
-                exit={{ scale: 0.9, y: 20 }}
-                className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-white rounded-xl min-[400px]:rounded-2xl overflow-hidden shadow-2xl my-auto"
-                onClick={e => e.stopPropagation()}
-              >
-                <button 
-                  type="button"
-                  className="absolute top-3 right-3 min-[400px]:top-6 min-[400px]:right-6 z-10 p-1.5 min-[400px]:p-2 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full text-white transition-all"
-                  onClick={() => setSelectedProject(null)}
-                  aria-label="Fermer"
-                >
-                  <X size={20} className="min-[400px]:w-6 min-[400px]:h-6" />
-                </button>
-                <div className="grid md:grid-cols-2">
-                  <div className="aspect-[4/3] md:aspect-auto">
-                    <img 
-                      src={selectedProject.image} 
-                      alt={selectedProject.title} 
-                      className="h-full w-full object-cover"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                  <div className="p-4 min-[400px]:p-6 sm:p-8 md:p-12 flex flex-col justify-center min-w-0">
-                    <span className="text-red-700 text-[10px] min-[400px]:text-xs font-bold uppercase tracking-widest mb-1 min-[400px]:mb-2">
-                      {SERVICES.find(s => s.id === selectedProject.category)?.title}
-                    </span>
-                    <h4 className="text-xl min-[400px]:text-2xl sm:text-3xl font-bold text-slate-900 mb-3 min-[400px]:mb-4">{selectedProject.title}</h4>
-                    <p className="text-slate-600 text-sm min-[400px]:text-base leading-relaxed mb-5 min-[400px]:mb-8">{selectedProject.description}</p>
-                    <button 
-                      type="button"
-                      onClick={() => setSelectedProject(null)}
-                      className="w-full py-3 min-[400px]:py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all text-sm min-[400px]:text-base"
-                    >
-                      Fermer
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </section>
 
       {/* Contact Section */}
