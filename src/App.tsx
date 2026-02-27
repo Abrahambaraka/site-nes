@@ -236,7 +236,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center pt-10 min-[400px]:pt-16 sm:pt-20 overflow-hidden">
+      <section id="home" className="relative flex items-start pt-6 min-[400px]:pt-10 sm:pt-16 lg:pt-20 pb-10 overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <img 
             src="https://picsum.photos/seed/construction/1280/720?blur=2" 
