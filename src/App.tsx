@@ -215,7 +215,7 @@ export default function App() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="md:hidden fixed inset-x-0 top-14 bg-white/98 backdrop-blur-xl border-b border-slate-200 shadow-2xl z-40"
+              className="fixed inset-x-0 top-14 bg-white/98 backdrop-blur-xl border-b border-slate-200 shadow-2xl z-40"
             >
               <div className="px-4 py-8 space-y-6">
                 <div className="relative">
