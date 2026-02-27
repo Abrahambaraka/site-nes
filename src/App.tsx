@@ -539,7 +539,7 @@ export default function App() {
           <div className="grid gap-10 md:gap-12 lg:gap-16 md:grid-cols-2 lg:grid-cols-4 mb-10">
             {/* Colonne Services */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-red-400 mb-4">Services</h4>
+              <h4 className="text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-red-400 mb-4">Services</h4>
               <ul className="space-y-2 text-[13px] sm:text-sm">
                 <li><a href="#contact" className="hover:text-white transition-colors">Demande de cotation</a></li>
                 <li><a href="#contact" className="hover:text-white transition-colors">Demande de devis</a></li>
@@ -550,7 +550,7 @@ export default function App() {
 
             {/* Colonne Entreprise */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-red-400 mb-4">L&apos;entreprise</h4>
+              <h4 className="text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-red-400 mb-4">L&apos;entreprise</h4>
               <ul className="space-y-2 text-[13px] sm:text-sm">
                 <li><a href="#about" className="hover:text-white transition-colors">Qui sommes-nous ?</a></li>
                 <li><a href="#services" className="hover:text-white transition-colors">Domaines d&apos;intervention</a></li>
@@ -561,7 +561,7 @@ export default function App() {
 
             {/* Colonne Contact & Devis */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-red-400 mb-4">Contact & Devis</h4>
+              <h4 className="text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-red-400 mb-4">Contact & Devis</h4>
               <ul className="space-y-2 text-[13px] sm:text-sm">
                 <li>
                   <span className="block text-slate-400 text-[11px] uppercase tracking-[0.18em] mb-1">Téléphone</span>
@@ -582,7 +582,7 @@ export default function App() {
 
             {/* Colonne Informations légales */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-red-400 mb-4">Informations légales</h4>
+              <h4 className="text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-red-400 mb-4">Informations légales</h4>
               <ul className="space-y-1.5 text-[11px] sm:text-[12px] text-slate-400">
                 <li><span className="font-semibold text-slate-200">ARSP :</span> 4598203574</li>
                 <li><span className="font-semibold text-slate-200">RCCM :</span> CD/LSH/RCCM/24-B-00751</li>
