@@ -137,8 +137,8 @@ export default function App() {
       }`}>
         <div className="max-w-7xl mx-auto px-3 min-[400px]:px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 min-[400px]:h-16 gap-4">
-            {/* Colonne gauche : menu hamburger + logo */}
-            <div className="flex items-center gap-2 md:gap-3">
+            {/* Colonne gauche : menu hamburger seul */}
+            <div className="flex items-center">
               <button
                 type="button"
                 className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white p-1.5 sm:p-2 shadow-sm hover:bg-slate-50"
@@ -147,20 +147,6 @@ export default function App() {
               >
                 <Menu size={18} className="text-slate-700" />
               </button>
-              <a
-                href="#home"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className="inline-flex items-center"
-              >
-                <img
-                  src="/logo.png"
-                  alt="NES Neema Engineering Supply"
-                  className="h-7 w-auto object-contain"
-                />
-              </a>
             </div>
 
             {/* Titre centré */}
