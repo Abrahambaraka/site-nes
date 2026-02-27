@@ -14,6 +14,7 @@ import {
   Mail, 
   MapPin, 
   CheckCircle2, 
+  Menu,
   X,
   ChevronRight,
   HardHat,
@@ -144,9 +145,7 @@ export default function App() {
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label={isMenuOpen ? 'Fermer le menu de navigation' : 'Ouvrir le menu de navigation'}
               >
-                <Search size={0} className="hidden" />
-                {/* Icône hamburger */}
-                <span className="sr-only">Menu</span>
+                <Menu size={18} className="text-slate-700" />
               </button>
               <a
                 href="#home"
