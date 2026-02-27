@@ -54,7 +54,7 @@ const SERVICES = [
     title: 'Génie Civil & Construction',
     description: 'Conception, planification et fourniture de matériaux pour vos projets de construction.',
     icon: HardHat,
-    image: 'https://picsum.photos/seed/civil-eng/600/400',
+    image: '/service-civil.png',
     details: ['Conception et Planification', 'Fourniture de matériaux de construction', 'Équipements de chantier', 'Génie civil complet']
   },
   {
