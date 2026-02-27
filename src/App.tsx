@@ -70,7 +70,7 @@ const SERVICES = [
     title: 'Climatisation & Froid',
     description: 'Vente, installation et maintenance de climatiseurs et chambres froides.',
     icon: Wind,
-    image: 'https://picsum.photos/seed/ac-unit/600/400',
+    image: '/service-hvac.png',
     details: ['Installation de climatiseurs', 'Maintenance préventive et curative', 'Chambres froides industrielles', 'Maintenance du gaz']
   }
 ];
