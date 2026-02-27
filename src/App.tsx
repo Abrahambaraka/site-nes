@@ -135,42 +135,53 @@ export default function App() {
         isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-sm' : 'bg-white'
       }`}>
         <div className="max-w-7xl mx-auto px-3 min-[400px]:px-4 sm:px-6 lg:px-8">
-          {/* Ligne 1 : menu / logo centré / actions */}
           <div className="flex items-center justify-between h-14 min-[400px]:h-16 gap-4">
-          {/* Logo à gauche servant de déclencheur du menu sur mobile */}
-          <div className="flex items-center gap-2 md:gap-3">
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white p-1.5 sm:p-2 shadow-sm hover:bg-slate-50"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label={isMenuOpen ? 'Fermer le menu de navigation' : 'Ouvrir le menu de navigation'}
-            >
-              <img
-                src="/logo.png"
-                alt="NES Neema Engineering Supply"
-                className="h-6 w-auto object-contain"
-              />
-            </button>
-          </div>
+            {/* Colonne gauche : menu hamburger + logo */}
+            <div className="flex items-center gap-2 md:gap-3">
+              <button
+                type="button"
+                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white p-1.5 sm:p-2 shadow-sm hover:bg-slate-50"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label={isMenuOpen ? 'Fermer le menu de navigation' : 'Ouvrir le menu de navigation'}
+              >
+                <Search size={0} className="hidden" />
+                {/* Icône hamburger */}
+                <span className="sr-only">Menu</span>
+              </button>
+              <a
+                href="#home"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="inline-flex items-center"
+              >
+                <img
+                  src="/logo.png"
+                  alt="NES Neema Engineering Supply"
+                  className="h-7 w-auto object-contain"
+                />
+              </a>
+            </div>
 
-            {/* Titre centré (style Jeune Afrique) */}
-            <a
-              href="#home"
-              onClick={(e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className="flex-1 flex items-center justify-center"
-              aria-label="NES Neema Engineering Supply - Accueil"
-            >
+            {/* Titre centré */}
+            <div className="flex-1 flex justify-center">
               <p className="text-[10px] sm:text-[11px] md:text-xs font-extrabold tracking-[0.18em] uppercase text-center">
                 <span className="text-[#1A1A1A]">NEEMA ENGENEERING</span>{' '}
                 <span className="text-[#E31B23]">SUPPLY SARLU</span>
               </p>
-            </a>
+            </div>
 
-            {/* Action droite : bouton S'abonner uniquement */}
-            <div className="hidden md:flex items-center gap-4 text-sm font-semibold">
+            {/* Barre de recherche + bouton S'abonner (desktop) */}
+            <div className="hidden md:flex items-center gap-4 text-sm font-semibold flex-shrink-0">
+              <div className="relative w-56 lg:w-72">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+                <input
+                  type="search"
+                  placeholder="Rechercher un service, un projet, une solution..."
+                  className="w-full rounded-full border border-slate-200 bg-slate-50 py-2.5 pl-9 pr-4 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#E31B23]/20 focus:border-[#E31B23] transition"
+                />
+              </div>
               <a
                 href="#contact"
                 className="inline-flex items-center rounded-full bg-[#E31B23] px-4 py-1.5 text-xs font-bold text-white shadow-sm hover:bg-red-700 transition-colors"
@@ -179,7 +190,7 @@ export default function App() {
               </a>
             </div>
 
-            {/* Icônes rapides sur mobile (recherche + contact) */}
+            {/* Recherche + abonnement en mobile */}
             <div className="flex items-center gap-2 md:hidden">
               <button
                 type="button"
@@ -194,38 +205,6 @@ export default function App() {
               >
                 S&apos;abonner
               </a>
-            </div>
-          </div>
-
-          {/* Ligne 2 : barre de recherche + navigation rubriques (desktop) */}
-          <div className="hidden md:flex items-center gap-6 pb-3">
-            {/* Barre de recherche */}
-            <div className="relative flex-1 max-w-xl">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-              <input
-                type="search"
-                placeholder="Rechercher un service, un projet, une solution..."
-                className="w-full rounded-full border border-slate-200 bg-slate-50 py-2.5 pl-9 pr-4 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#E31B23]/20 focus:border-[#E31B23] transition"
-              />
-            </div>
-
-            {/* Rubriques principales */}
-            <div className="flex items-center gap-3 text-xs font-semibold text-slate-600">
-              {[
-                { name: 'Accueil', href: '#home' },
-                { name: 'À Propos', href: '#about' },
-                { name: 'Services', href: '#services' },
-                { name: 'Catalogue', href: '#catalogue' },
-                { name: 'Réalisations', href: '#realisations' },
-              ].map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="px-2 py-1 rounded-full hover:text-[#E31B23] hover:bg-red-50 transition-colors"
-                >
-                  {link.name}
-                </a>
-              ))}
             </div>
           </div>
         </div>
