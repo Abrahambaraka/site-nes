@@ -62,7 +62,7 @@ const SERVICES = [
     title: 'Matériels Électriques & Solaire',
     description: 'Installation, dépannage et fourniture de matériels électriques et solutions solaires.',
     icon: Zap,
-    image: 'https://picsum.photos/seed/solar-panels/600/400',
+    image: '/service-electrical.png',
     details: ['Moteurs et Batteries', 'Disjoncteurs et Fusibles', 'Éclairages industriels et publics', 'Panneaux solaires et onduleurs', 'Automatisation et domotique']
   },
   {
