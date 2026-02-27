@@ -30,7 +30,7 @@ const SERVICES = [
     title: 'Pièces de Rechange',
     description: 'Vente de pièces de rechange pour tout type de véhicules de toutes marques (Pneus, Pompes, Moteurs, Suspensions, etc.).',
     icon: Settings,
-    image: 'https://picsum.photos/seed/carparts/600/400',
+    image: '/service-parts.png',
     details: ['Pneus et jantes', 'Pompes à eau et liquide de refroidissement', 'Moteurs et alternateurs', 'Batteries et kits de distribution', 'Filtres et démarreurs']
   },
   {
