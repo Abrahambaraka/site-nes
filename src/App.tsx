@@ -38,7 +38,7 @@ const SERVICES = [
     title: 'Engins de Chantier',
     description: 'Fourniture d\'engins lourds pour la construction, rénovation, aménagement et démolition.',
     icon: Construction,
-    image: 'https://picsum.photos/seed/excavator/600/400',
+    image: '/service-machinery.png',
     details: ['Tracteurs et Mini-pelles', 'Pelles sur chenilles et sur pneus', 'Bouteurs et Tracteurs sur chenilles', 'Niveleuses et Compacteurs', 'Élévateurs de chantier']
   },
   {
@@ -46,7 +46,7 @@ const SERVICES = [
     title: 'Camions & Trucks',
     description: 'Une large gamme de camions de transport robustes adaptés à vos besoins logistiques.',
     icon: Truck,
-    image: 'https://picsum.photos/seed/heavy-truck/600/400',
+    image: '/service-trucks.png',
     details: ['Camions bennes', 'Tracteurs routiers', 'Camions de transport de marchandises', 'Véhicules utilitaires légers']
   },
   {
