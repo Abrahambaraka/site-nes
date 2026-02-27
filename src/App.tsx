@@ -532,21 +532,83 @@ export default function App() {
         <ChevronRight size={20} className="min-[400px]:w-6 min-[400px]:h-6 -rotate-90" />
       </motion.button>
 
-      {/* Footer */}
-      <footer id="footer" className="py-8 sm:py-12 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-3 min-[400px]:px-4 sm:px-6 lg:px-8 w-full min-w-0">
-          {/* Ligne principale : logo, nom, copyright, liens */}
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8 text-center md:text-left">
-            <div className="flex flex-col sm:flex-row items-center gap-3 min-w-0">
-              <img src="/logo.png" alt="NES Neema Engineering Supply" className="h-8 min-[400px]:h-10 w-auto object-contain shrink-0" />
-              <div className="min-w-0">
-                <p className="text-xs min-[400px]:text-sm font-bold text-slate-900 break-words">NEEMA ENGENEERING SUPPLY</p>
-                <p className="text-[9px] min-[400px]:text-[10px] font-bold text-red-700 uppercase tracking-widest">© 2025 - Tous droits réservés</p>
-              </div>
+      {/* Footer type magazine (inspiré Jeune Afrique) */}
+      <footer id="footer" className="bg-slate-950 text-slate-200 pt-12 pb-6 mt-16 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full min-w-0">
+          {/* Bande supérieure avec colonnes */}
+          <div className="grid gap-10 md:gap-12 lg:gap-16 md:grid-cols-2 lg:grid-cols-4 mb-10">
+            {/* Colonne Services */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-red-400 mb-4">Services</h4>
+              <ul className="space-y-2 text-[13px] sm:text-sm">
+                <li><a href="#contact" className="hover:text-white transition-colors">Demande de cotation</a></li>
+                <li><a href="#contact" className="hover:text-white transition-colors">Demande de devis</a></li>
+                <li><a href="#services" className="hover:text-white transition-colors">Catalogue de services</a></li>
+                <li><a href="/catalogue.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Télécharger le catalogue NES (PDF)</a></li>
+              </ul>
             </div>
-            <div className="flex gap-6 min-[400px]:gap-8">
-              <a href={`mailto:${CONTACT_EMAIL}`} className="text-slate-400 hover:text-red-700 transition-colors p-1" title="Nous écrire"><Mail size={18} className="min-[400px]:w-5 min-[400px]:h-5" /></a>
-              <a href="#contact" className="text-slate-400 hover:text-red-700 transition-colors p-1" title="Contact & Adresse"><MapPin size={18} className="min-[400px]:w-5 min-[400px]:h-5" /></a>
+
+            {/* Colonne Entreprise */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-red-400 mb-4">L&apos;entreprise</h4>
+              <ul className="space-y-2 text-[13px] sm:text-sm">
+                <li><a href="#about" className="hover:text-white transition-colors">Qui sommes-nous ?</a></li>
+                <li><a href="#services" className="hover:text-white transition-colors">Domaines d&apos;intervention</a></li>
+                <li><span className="text-slate-400">Engagement qualité 100&nbsp;%</span></li>
+                <li><span className="text-slate-400">Siège : N°13 Avenue Chemin Public, Lubumbashi, RDC</span></li>
+              </ul>
+            </div>
+
+            {/* Colonne Contact & Devis */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-red-400 mb-4">Contact & Devis</h4>
+              <ul className="space-y-2 text-[13px] sm:text-sm">
+                <li>
+                  <span className="block text-slate-400 text-[11px] uppercase tracking-[0.18em] mb-1">Téléphone</span>
+                  <a href="tel:+243997662228" className="hover:text-white transition-colors block">+243 997 662 228</a>
+                  <a href="tel:+243978005859" className="hover:text-white transition-colors block">+243 978 005 859</a>
+                </li>
+                <li>
+                  <span className="block text-slate-400 text-[11px] uppercase tracking-[0.18em] mb-1">Email</span>
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white transition-colors block">{CONTACT_EMAIL}</a>
+                </li>
+                <li>
+                  <a href="#contact" className="inline-flex items-center justify-center rounded-full bg-red-600 px-4 py-2 text-[12px] font-bold text-white shadow-sm hover:bg-red-700 transition-colors">
+                    Demander un devis
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Colonne Informations légales */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-red-400 mb-4">Informations légales</h4>
+              <ul className="space-y-1.5 text-[11px] sm:text-[12px] text-slate-400">
+                <li><span className="font-semibold text-slate-200">ARSP :</span> 4598203574</li>
+                <li><span className="font-semibold text-slate-200">RCCM :</span> CD/LSH/RCCM/24-B-00751</li>
+                <li><span className="font-semibold text-slate-200">ID Nat. :</span> 05-F4300-N05807D</li>
+                <li><span className="font-semibold text-slate-200">Numéro Impôt :</span> A2415090E</li>
+                <li><span className="font-semibold text-slate-200">CNSS :</span> 1020391100</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Barre inférieure */}
+          <div className="border-t border-slate-800 pt-4 mt-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] sm:text-xs text-slate-500">
+            <div className="flex items-center gap-2">
+              <img src="/logo.png" alt="NES Neema Engineering Supply" className="h-6 w-auto object-contain" />
+              <span>NEEMA ENGENEERING SUPPLY SARLU</span>
+            </div>
+            <div className="text-center sm:text-left">
+              © 2025 NES Sarlu, tous droits réservés.
+            </div>
+            <div className="flex items-center gap-4">
+              <a href={`mailto:${CONTACT_EMAIL}`} title="Nous écrire" className="text-slate-400 hover:text-red-500 transition-colors">
+                <Mail size={16} />
+              </a>
+              <a href="#contact" title="Voir nos coordonnées" className="text-slate-400 hover:text-red-500 transition-colors">
+                <MapPin size={16} />
+              </a>
             </div>
           </div>
         </div>
